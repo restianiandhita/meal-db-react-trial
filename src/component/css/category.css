@@ -1,0 +1,15 @@
+.category {
+    width: 100%;
+    padding: 7vmin;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: wheat;
+}
+
+.card {
+    width: 18rem;
+    margin-top: 4vmin;
+    border-radius: 1vmin;
+}
