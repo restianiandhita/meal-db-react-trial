@@ -7,6 +7,7 @@ const Main = () => {
     let [meal, setMeal] = useState({ meals: [] });
     const [query, setQuery] = useState('');
     const [input, setInput] = useState('');
+    const [dateState, setDateState] = useState(new Date());
     console.log(query);
     useEffect(() => {
         const fetchData = async () => {
@@ -16,13 +17,21 @@ const Main = () => {
             setMeal(result.data);
         };
         fetchData();
+        const intervalId = setInterval(() => {
+            setDateState(new Date());
+        }, 1000);
+        return () => clearInterval(intervalId);
     }, [query]);
 
     return (
         <div className="main">
         <h1>WELCOME to YOUR MEAL</h1>
 
-        <p>{new Date().toString()}</p>
+        <p>
+            {
+                dateState.toString()
+            }
+        </p>
         
         <br></br>
             <div className="d-flex">
